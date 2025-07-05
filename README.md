@@ -2,7 +2,7 @@
 
 A beautifully designed Chrome Extension that replaces your new tab with a real-time analog clock, set against a dark-themed background featuring a world map and twinkling stars. It also displays digital time, date, and multiple global time zones.
 
-![Preview](preview.png) <!-- Optional: Add a screenshot of your extension -->
+![Preview](clock.png) <!-- Optional: Add a screenshot of your extension -->
 
 ---
 
