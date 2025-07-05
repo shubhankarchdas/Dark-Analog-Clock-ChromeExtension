@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c1445 0%, #1a1a2e 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #e0e0ff;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.date-display {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.time-display {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.clock-container {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    margin: 0 auto 40px;
+}
+
+.world-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at center, rgba(40, 60, 134, 0.2) 0%, rgba(12, 20, 69, 0.8) 70%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450"><path fill="%231d2b5f" d="M0,0H800V450H0Z"/><path fill="%232a4080" d="M149,177c-3,0-7,1-10,0-3-1-4-4-4-7,0-2,1-4,3-6,2-1,4-2,7-1,2,1,4,3,4,6,0,2-1,4-3,5C152,176,150,177,149,177Z"/></svg>');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 10px rgba(40, 60, 134, 0.3),
+        0 0 30px rgba(0, 10, 50, 0.8),
+        inset 0 0 20px rgba(0, 5, 20, 0.8);
+    opacity: 0.9;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour-markers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hour-marker {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background: #6d83b8;
+    left: calc(50% - 2px);
+    transform-origin: bottom center;
+}
+
+.hour-marker.main {
+    width: 6px;
+    height: 20px;
+    background: #8aa2e3;
+}
+
+.clock-center {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #e0e0ff;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(224, 224, 255, 0.5);
+}
+
+.hand {
+    position: absolute;
+    transform-origin: bottom center;
+    bottom: 50%;
+    left: 50%;
+    border-radius: 10px 10px 0 0;
+    transform: translateX(-50%);
+}
+
+.hour-hand {
+    width: 8px;
+    height: 80px;
+    background: #e0e0ff;
+    z-index: 5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.minute-hand {
+    width: 6px;
+    height: 120px;
+    background: #b8c5ff;
+    z-index: 6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.second-hand {
+    width: 2px;
+    height: 140px;
+    background: #ff6b6b;
+    z-index: 7;
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+.time-zones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.time-zone {
+    background: rgba(40, 60, 134, 0.4);
+    border-radius: 10px;
+    padding: 12px 20px;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(100, 130, 230, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.time-zone h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #b8c5ff;
+}
+
+.time-zone .time {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) linear infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 1; }
+}
